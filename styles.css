@@ -1,0 +1,8 @@
+
+.choice-container {
+    padding: 5px;
+}
+
+.choice-container:hover {
+    background: grey;
+}
