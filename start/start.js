@@ -1,6 +1,5 @@
 
 startButton = document.querySelector("#start-Button")
-
 scoresButton = document.querySelector("#high-scores")
 
 startButton.addEventListener("click", function() {

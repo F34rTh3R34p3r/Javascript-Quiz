@@ -12,9 +12,9 @@ let acceptingAnswers = true
 let currentQuestion = {}
 let questionIndex = 0
 let questionPrinted = 1
+let deadlineSeconds = 180;
 
 const SCORE_INCREMENT = 1;
-
 
 quizQuestions = [
     {question: "______ JavaScript is also called client-side JavaScript.",
@@ -139,51 +139,57 @@ function getQuestionFromArray() {
     console.log("incremented Index", questionIndex)
     questionPrinted++  // 1 to 2
 
-    // EventListener for click; compares answer chosen to correct answer; if/else statement to award score or pass.
-
-    choices.forEach(choice => {
-        //console.log("choice" , choice)
-        choice.addEventListener('click', event => {
-            if(!acceptingAnswers) return
-    
-            var correctAnswer = currentQuestion.correctAnswer
-            console.log("Correct Answer: " + correctAnswer)
-            var providedAnswer = event.target.dataset.letter
-            console.log("Provided Answer: " + providedAnswer)
-
-    if (correctAnswer === providedAnswer) {
-        console.log("THAT'S A CORRECT ANSWER")
-        incrementScore(SCORE_INCREMENT)
-        acceptingAnswers = false
-        resultDisplay.textContent = "Correct Answer!"
-        resetResultDisplay()
-        if (questionIndex > TOTAL_QUESTIONS_LENGTH) {
-            localStorage.setItem('mostRecentScore', score)
-
-            return window.location.assign('./endPage/end.html')
-        }
-        getQuestionFromArray()
-        
-    } else {
-        console.log("THAT'S AN INCORRECT ANSWER")
-        resultDisplay.textContent = "Incorrect Answer!"
-        acceptingAnswers = false
-        resetResultDisplay()   
-        if (questionIndex > TOTAL_QUESTIONS_LENGTH) {
-            localStorage.setItem('mostRecentScore', score)
-
-            return window.location.assign('./endPage/end.html')
-        }
-        getQuestionFromArray() 
-    }
-        console.log("===========")
-        })
-    })
 }
+
+// EventListener for click; compares answer chosen to correct answer; if/else statement to award score or pass.
+// 
+
+choices.forEach((choice) => {
+    choice.addEventListener('click', event => {
+    
+        //if(!acceptingAnswers) return
+        var correctAnswer = currentQuestion.correctAnswer
+        console.log("Correct Answer: " + correctAnswer)
+        var providedAnswer = event.target.dataset.letter
+        console.log("Provided Answer: " + providedAnswer)
+
+        if (correctAnswer === providedAnswer) {
+            console.log("THAT'S A CORRECT ANSWER")
+            incrementScore(SCORE_INCREMENT)
+            acceptingAnswers = false
+            resultDisplay.textContent = "Correct Answer!"
+            resultDisplay.style.backgroundColor = "rgba(52, 204, 25, 0.4)"
+            resetResultDisplay()
+            if (questionIndex > TOTAL_QUESTIONS_LENGTH) {
+                localStorage.setItem('mostRecentScore', score)
+                return window.location.assign('./endPage/end.html')
+            }
+            getQuestionFromArray()
+            
+        } else {
+            console.log("THAT'S AN INCORRECT ANSWER")
+            resultDisplay.textContent = "Incorrect Answer!"
+            resultDisplay.style.backgroundColor = "rgba(239, 26, 26, 0.4)"
+            resultDisplay.style.opacity = "0.9"
+            acceptingAnswers = false
+            deadlineSeconds = deadlineSeconds - 15
+            resetResultDisplay()   
+            if (questionIndex > TOTAL_QUESTIONS_LENGTH) {
+                localStorage.setItem('mostRecentScore', score)
+
+                return window.location.assign('./endPage/end.html')
+            }
+            getQuestionFromArray() 
+        }
+            console.log("===========")
+    })
+
+})
 
 function resetResultDisplay() {
     setTimeout(function() {
         resultDisplay.textContent = ""
+        resultDisplay.style.backgroundColor = "transparent"
     }, 1500)
 }
 
@@ -193,7 +199,6 @@ function incrementScore(number) {
 }
 
 function countdownTimerStart(){
-    var deadlineSeconds = 180;
     var countdown = setInterval(function() {
         
         var secondsLeft = Math.floor(deadlineSeconds % 60);
@@ -210,5 +215,3 @@ function countdownTimerStart(){
         
     }, 1000)
 }
-
-

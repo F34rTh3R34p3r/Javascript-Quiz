@@ -43,6 +43,8 @@ submitButton.addEventListener("click", function() {
     highScores.sort(compare)
     highScores.splice(5)
 
+    console.log(highScores)
+
     localStorage.setItem('highScores', JSON.stringify(highScores))
 
     return window.location.assign('../scores/scores.html')

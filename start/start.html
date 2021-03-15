@@ -6,20 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../styles.css">
-    
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Javascript Quiz - Title Screen</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container col-lg-6 col-md-12 justify-content-center">
         <h1>Javascript Quiz</h1>
         <div class="buttons">
-            <div class="start button" id="start-Button">
-                <p>Start Game</p>
-            </div>
-
-            <div class="high-scores button" id="high-scores">
-                <p>High Scores</p>    
-            </div>
+            <button type="button" class="btn btn-primary btn-lg" id="start-Button">Start Game</button>
+            <button type="button" class="btn btn-warning btn-lg" id="high-scores">High Scores</button>
         </div>
     </div>
     <script src="start.js"></script>
