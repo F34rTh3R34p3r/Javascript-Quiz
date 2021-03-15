@@ -15,9 +15,9 @@ highScoresList.innerHTML = highScores.map(score => {
 }).join('')
 
 exitButton.addEventListener("click", function() {
-    return window.location.assign('../start/start.html');
+    return window.location.assign('../start.html');
 })
 
 scoresButton.addEventListener("click", function() {
-    return window.location.assign('../index.html');
+    return window.location.assign('../game/index.html');
 })
