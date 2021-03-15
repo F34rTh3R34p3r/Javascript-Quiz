@@ -19,13 +19,12 @@ This project is meant to demonstrate knowledge and competency in the following:
 
 File name | Function
 ------------ | -------------
+./start.html | Main page HTML
+./start.js | Main page Javascript
+**game (folder)**
 index.html | Quiz HTML
 style.css | CSS stylesheet
 script.js| Quiz logic Javascript
- | 
-**start (folder)** |
-./start.html | Main page HTML
-./start.js | Main page Javascript
 **endPage (folder)** |
 ./end.html | "Enter score" HTML
 ./end.js | "Enter score" Javascript
@@ -61,20 +60,12 @@ The following are the specific components of this Javascript Quiz:
 - High scores are displayed here.
 
 ## Challenges
-- 
+- The only challenge for the code  is to properly order the leaderboard. Using the `sort()` and `reverse()` functions, and even with extensive experimentation, I was unable to create a consistent method that would consistently display the top 5 scores in reverse order. 
+- Also having trouble deleting obsolete Github commits. This appears to cause clutter in the repo but not in the code itself.
 
 
-
-
-<pre>
-
-</pre>
-# Website Appearance 
-Once loaded, the website should look like this:  
-![Appearance Upon Deployment](screenshot.jpg)
-
-This website is available at the following URL:   https://f34rth3r34p3r.github.io/JavascriptPasswordGenerator/
-
+This website is available at the following URL:   https://f34rth3r34p3r.github.io/Javascript-Quiz/
+Git: https://github.com/F34rTh3R34p3r/Javascript-Quiz.git
 
 # Contributor(s)
 Daniel Pisani (F34rTh3R34p3r)
