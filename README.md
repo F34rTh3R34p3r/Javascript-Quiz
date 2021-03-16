@@ -19,10 +19,10 @@ This project is meant to demonstrate knowledge and competency in the following:
 
 File name | Function
 ------------ | -------------
-./start.html | Main page HTML
+./index.html | Main page HTML
 ./start.js | Main page Javascript
 **game (folder)**
-index.html | Quiz HTML
+game.html | Quiz HTML
 style.css | CSS stylesheet
 script.js| Quiz logic Javascript
 **endPage (folder)** |
