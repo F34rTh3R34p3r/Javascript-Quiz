@@ -32,6 +32,13 @@ script.js| Quiz logic Javascript
 ./scores.html | "High scores" HTML
 ./end.js | "High scores" Javascript
 
+# Website Appearance 
+Once loaded, the website should look like this:  
+![Appearance Upon Deployment - Start Page](assets/images/websiteScreenshot.jpg)
+![Appearance Upon Deployment - Quiz](assets/images/websiteScreenshot.jpg)
+![Appearance Upon Deployment - Enter Initials](assets/images/websiteScreenshot.jpg)
+![Appearance Upon Deployment - Scoreboard](assets/images/websiteScreenshot.jpg)
+
 # Features
 The following are the specific components of this Javascript Quiz:
 

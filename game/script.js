@@ -162,7 +162,7 @@ choices.forEach((choice) => {
             resetResultDisplay()
             if (questionIndex > TOTAL_QUESTIONS_LENGTH) {
                 localStorage.setItem('mostRecentScore', score)
-                return window.location.assign('./endPage/end.html')
+                return window.location.assign('../endPage/end.html')
             }
             getQuestionFromArray()
             
